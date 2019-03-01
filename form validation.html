@@ -1,0 +1,67 @@
+<html>
+<head>
+<title>form validation</title> 
+<style>
+form
+{
+margin-top:150px
+width:500px
+}
+</style>
+<script>
+function validateform()
+{
+var x=document.forms["myform"]["fname"].value;
+if(x=="")
+{
+document.getElementById("ss").innerHTML="Please enter name";
+return false;
+}
+else
+{
+document.getElementById("ss").innerHTML="";
+}
+var y=document.forms["myform"]["fpass"].value;
+if(y=="")
+{
+document.getElementById("dd").innerHTML="Please enter password";
+return false;
+}
+else
+{
+document.getElementById("dd").innerHTML="";
+}
+if((document.myform.m.checked==false)&&(document.myform.f.checked==false))
+{
+alert("please select the gender");
+return false;
+}
+else
+{
+return true;
+}
+}
+</script>
+</head>
+<body>
+<center>
+<form name="myform" action="https://www.google.com" onsubmit="return validateform()" method="get">
+<fieldset>
+<legend>Form validation</legend>
+Name:<input type="text" name="fname" >
+<span id="ss" ></span><br><br>
+Password:<input type="password" name="fpass">
+<span id="dd" ></span><br><br>
+Gender:<input type="radio" name="gender" id="f">
+Female
+<input type="radio" name="gender" id="m">Male<br><br>
+Email:<input type="email" name="femail" required><br><br>
+Address:<br>
+<textarea rows="10" cols="20" required></textarea>
+<br><br>
+<input type="submit" value="submit">
+</fieldset>
+</form>
+</center>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>display date using javascript</title>
+</head> 
+<body>
+<center>
+<h2>Click the button to Display the Date</h2>
+<button onclick="DisplayDate()">
+Time:</button>
+<script>
+function DisplayDate()
+{
+    var now     = new Date(); 
+    var year    = now.getFullYear();
+    var month   = now.getMonth()+1; 
+    var day     = now.getDate();
+    var hour    = now.getHours();
+    var minute  = now.getMinutes();
+    var second  = now.getSeconds(); 
+document.getElementById("demo").innerHTML=hour;
+//document.getElementById("demo").innerHTML=minute;
+
+}
+</script>
+<h3 id="demo"></h3>
+</center>
+</body>
+</html>
